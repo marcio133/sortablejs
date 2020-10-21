@@ -21,7 +21,7 @@
 })(function sortableFactory() {
 	"use strict";
 
-	if (typeof window === "undefined" || !window.document) {
+	if (typeof window === "undefined" || !window.document || !navigator.userAgent) {
 		return function sortableError() {
 			throw new Error("Sortable.js requires a window with a document");
 		};
@@ -95,7 +95,9 @@
 			capture: false,
 			passive: false
 		},
+		// if (!!navigator.userAgent &&!!navigator.userAgent) {
 
+		// }
 		IE11OrLess = !!navigator.userAgent.match(/(?:Trident.*rv[ :]?11\.|msie|iemobile)/i),
 		Edge = !!navigator.userAgent.match(/Edge/i),
 		FireFox = !!navigator.userAgent.match(/firefox/i),
